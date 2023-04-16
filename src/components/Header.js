@@ -5,7 +5,7 @@ import { FaBars } from 'react-icons/fa';
 const Header = () => {
   return (
     <AppBar position="static">
-      <Toolbar>
+      <Toolbar className="header" >
         <IconButton
           edge="start"
           color="inherit"

@@ -16,7 +16,7 @@ const AddItemForm = ({ addItem }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='printHide'>
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12} sm={3}>
           <TextField
@@ -46,9 +46,18 @@ const AddItemForm = ({ addItem }) => {
               value={item.category}
               onChange={handleChange}
             >
+
               <MenuItem value="fruits">Fruits</MenuItem>
               <MenuItem value="vegetables">Vegetables</MenuItem>
+              <MenuItem value="meat">Meat</MenuItem>
+              <MenuItem value="premade">Premade</MenuItem>
               <MenuItem value="dairy">Dairy</MenuItem>
+              <MenuItem value="household">Household</MenuItem>
+              <MenuItem value="frozen">Frozen</MenuItem>
+              <MenuItem value="general">General</MenuItem>
+              <MenuItem value="bread">Bread</MenuItem>
+              <MenuItem value="snacks">Snacks</MenuItem>
+              
               {/* Add more categories as needed */}
             </Select>
           </FormControl>

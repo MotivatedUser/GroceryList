@@ -5,7 +5,7 @@ const Filters = ({ selectedCategory, showUnpurchased, onCategoryChange, onUnpurc
   const categories = ['fruits', 'vegetables', 'dairy']; // Add more categories as needed
 
   return (
-    <div>
+    <div className='printHide'>
       <FormControl fullWidth variant="outlined">
         <InputLabel>Category</InputLabel>
         <Select

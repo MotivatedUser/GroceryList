@@ -28,6 +28,10 @@ const ItemList = ({ items, togglePurchased, deleteItem }) => {
   const renderCategories = () => {
     const groupedItems = groupByCategory(items);
 
+    function handlePrint() {
+        window.print();
+      }
+
     return Object.entries(groupedItems).map(([category, categoryItems], index) => (
       <React.Fragment key={index}>
         <Typography variant="h6" gutterBottom>
@@ -37,7 +41,9 @@ const ItemList = ({ items, togglePurchased, deleteItem }) => {
           {renderCategoryItems(categoryItems)}
         </List>
         <Divider />
+        <button onClick={handlePrint}>Print Shopping List</button>
       </React.Fragment>
+      
     ));
   };
 
@@ -48,6 +54,7 @@ const ItemList = ({ items, togglePurchased, deleteItem }) => {
       ) : (
         <Typography variant="subtitle1">No items in the list</Typography>
       )}
+      
     </div>
   );
 };
