@@ -19,7 +19,7 @@
   }
 
   /* Hide unnecessary elements */
-  .header, .footer, .printHide, .ad, .button {
+  .header, .footer, .printHide, .ad, .button, Button {
     display: none !important;
   }
 

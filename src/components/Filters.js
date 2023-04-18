@@ -2,7 +2,7 @@ import React from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Checkbox, FormControlLabel } from '@mui/material';
 
 const Filters = ({ selectedCategory, showUnpurchased, onCategoryChange, onUnpurchasedChange }) => {
-  const categories = ['fruits', 'vegetables', 'dairy', 'meat', 'premade', 'household', 'pets', 'frozen', 'general', 'bread', 'snacks']; // Add more categories as needed
+  const categories = ['Fruits', 'Vegetables', 'Dairy', 'Meat', 'Premade', 'Household', 'Pets', 'Frozen', 'General', 'Bread', 'Snacks']; // Add more categories as needed
 
   return (
     <div className='printHide'>

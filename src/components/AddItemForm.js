@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { TextField, Button, Grid, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import PropTypes from 'prop-types';
 
 const AddItemForm = ({ addItem }) => {
-  const [item, setItem] = useState({ name: '', quantity: '', category: '' });
+  const [item, setItem] = useState({ name: '', quantity: '', category: '', purchased: false });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,17 +48,17 @@ const AddItemForm = ({ addItem }) => {
               onChange={handleChange}
             >
 
-              <MenuItem value="fruits">Fruits</MenuItem>
-              <MenuItem value="vegetables">Vegetables</MenuItem>
-              <MenuItem value="meat">Meat</MenuItem>
-              <MenuItem value="premade">Premade</MenuItem>
-              <MenuItem value="dairy">Dairy</MenuItem>
-              <MenuItem value="household">Household</MenuItem>
-              <MenuItem value="pets">Pets</MenuItem>
-              <MenuItem value="frozen">Frozen</MenuItem>
-              <MenuItem value="general">General</MenuItem>
-              <MenuItem value="bread">Bread</MenuItem>
-              <MenuItem value="snacks">Snacks</MenuItem>
+              <MenuItem value="Fruits">Fruits</MenuItem>
+              <MenuItem value="Vegetables">Vegetables</MenuItem>
+              <MenuItem value="Meat">Meat</MenuItem>
+              <MenuItem value="Premade">Premade</MenuItem>
+              <MenuItem value="Dairy">Dairy</MenuItem>
+              <MenuItem value="Household">Household</MenuItem>
+              <MenuItem value="Pets">Pets</MenuItem>
+              <MenuItem value="Frozen">Frozen</MenuItem>
+              <MenuItem value="General">General</MenuItem>
+              <MenuItem value="Bread">Bread</MenuItem>
+              <MenuItem value="Snacks">Snacks</MenuItem>
               
             </Select>
           </FormControl>
@@ -70,6 +71,10 @@ const AddItemForm = ({ addItem }) => {
       </Grid>
     </form>
   );
+};
+
+AddItemForm.propTypes = {
+  addItem: PropTypes.func.isRequired,
 };
 
 export default AddItemForm;

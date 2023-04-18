@@ -14,7 +14,7 @@ const Header = () => {
         >
           <FaCartPlus />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} data-testid="shopping-list-header" >
           Shopping List
         </Typography>
       </Toolbar>

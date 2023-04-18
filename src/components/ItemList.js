@@ -17,7 +17,7 @@ const ItemList = ({ items, togglePurchased, deleteItem }) => {
   const renderCategoryItems = (categoryItems) => {
     return categoryItems.map((item, index) => (
         <Item
-        key={index}
+        key={item.id}
         item={item}
         togglePurchased={togglePurchased}
         deleteItem={deleteItem}

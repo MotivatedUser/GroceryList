@@ -1,18 +1,19 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { configureStore, createSlice, nanoid } from '@reduxjs/toolkit';
 
 const itemsSlice = createSlice({
   name: 'items',
   initialState: [],
   reducers: {
     addItem: (state, action) => {
-      state.push(action.payload);
+      const newItem = { ...action.payload, id: nanoid() };
+      state.push(newItem);
     },
     togglePurchased: (state, action) => {
-      const index = state.findIndex((item) => item === action.payload);
+      const index = state.findIndex((item) => item.id === action.payload.id);
       state[index].purchased = !state[index].purchased;
-    },
+    },    
     deleteItem: (state, action) => {
-      return state.filter((item) => item !== action.payload);
+      return state.filter((item) => item.id !== action.payload.id);
     },
   },
 });
@@ -25,3 +26,4 @@ export const store = configureStore({
   },
 });
 
+export default store;
