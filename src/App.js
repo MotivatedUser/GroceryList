@@ -55,7 +55,7 @@ const App = () => {
         onUnpurchasedChange={handleUnpurchasedChange}
       />
       <ItemList items={filteredItems} togglePurchased={handleTogglePurchased} deleteItem={handleDeleteItem} />
-      <Button type="submit" variant="contained" color="primary" onClick={handlePrint} fullWidth>
+      <Button type="submit" variant="contained" color="primary" onClick={handlePrint} aria-label='print' fullWidth>
         Print Shopping List
       </Button>
     </div>
