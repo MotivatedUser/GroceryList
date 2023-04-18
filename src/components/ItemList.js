@@ -28,9 +28,7 @@ const ItemList = ({ items, togglePurchased, deleteItem }) => {
   const renderCategories = () => {
     const groupedItems = groupByCategory(items);
 
-    function handlePrint() {
-        window.print();
-      }
+    
 
     return Object.entries(groupedItems).map(([category, categoryItems], index) => (
       <React.Fragment key={index}>
@@ -41,7 +39,7 @@ const ItemList = ({ items, togglePurchased, deleteItem }) => {
           {renderCategoryItems(categoryItems)}
         </List>
         <Divider />
-        <button onClick={handlePrint}>Print Shopping List</button>
+        
       </React.Fragment>
       
     ));

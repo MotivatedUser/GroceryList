@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.addForm {
+  padding-top: 2%;
+}
 
 /* Reset default print styles */
 @media print {

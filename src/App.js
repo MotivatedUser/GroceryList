@@ -1,30 +1,29 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem, togglePurchased, deleteItem } from './app/store';
 import Header from './components/Header';
 import AddItemForm from './components/AddItemForm';
 import './App.css';
 import ItemList from './components/ItemList';
 import Filters from './components/Filters';
-
+import { Button } from '@mui/material';
 
 const App = () => {
-  const [items, setItems] = useState([]);
+  const items = useSelector((state) => state.items);
+  const dispatch = useDispatch();
   const [selectedCategory, setSelectedCategory] = useState('');
   const [showUnpurchased, setShowUnpurchased] = useState(false);
 
-  const addItem = (newItem) => {
-    setItems([...items, newItem]);
+  const handleAddItem = (newItem) => {
+    dispatch(addItem(newItem));
   };
 
-  const togglePurchased = (itemToToggle) => {
-    const updatedItems = items.map((item) =>
-      item === itemToToggle ? { ...item, purchased: !item.purchased } : item
-    );
-    setItems(updatedItems);
+  const handleTogglePurchased = (itemToToggle) => {
+    dispatch(togglePurchased(itemToToggle));
   };
 
-  const deleteItem = (itemToDelete) => {
-    const updatedItems = items.filter((item) => item !== itemToDelete);
-    setItems(updatedItems);
+  const handleDeleteItem = (itemToDelete) => {
+    dispatch(deleteItem(itemToDelete));
   };
 
   const handleCategoryChange = (event) => {
@@ -41,22 +40,26 @@ const App = () => {
     return categoryMatch && unpurchasedMatch;
   });
 
+  function handlePrint() {
+    window.print();
+  }
+
   return (
     <div>
       <Header />
-      <AddItemForm addItem={addItem} />
+      <AddItemForm addItem={handleAddItem} />
       <Filters
         selectedCategory={selectedCategory}
         showUnpurchased={showUnpurchased}
         onCategoryChange={handleCategoryChange}
-        onUnpurchasedChange={handleUnpurchasedChange} 
+        onUnpurchasedChange={handleUnpurchasedChange}
       />
-      <ItemList items={filteredItems} togglePurchased={togglePurchased} deleteItem={deleteItem} />
-      {/* Other components */}
+      <ItemList items={filteredItems} togglePurchased={handleTogglePurchased} deleteItem={handleDeleteItem} />
+      <Button type="submit" variant="contained" color="primary" onClick={handlePrint} fullWidth>
+        Print Shopping List
+      </Button>
     </div>
   );
 };
 
 export default App;
-
-

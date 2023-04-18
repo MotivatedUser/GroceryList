@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
-import { FaBars } from 'react-icons/fa';
+import { FaCartPlus } from 'react-icons/fa';
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
           aria-label="menu"
           sx={{ mr: 2 }}
         >
-          <FaBars />
+          <FaCartPlus />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Shopping List
