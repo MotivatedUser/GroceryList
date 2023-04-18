@@ -64,7 +64,7 @@ const AddItemForm = ({ addItem }) => {
           </FormControl>
         </Grid>
         <Grid item xs={12} sm={3}>
-          <Button type="submit" variant="contained" color="primary" fullWidth>
+          <Button type="submit" variant="contained" color="primary" aria-label='AddItem' fullWidth>
             Add Item
           </Button>
         </Grid>

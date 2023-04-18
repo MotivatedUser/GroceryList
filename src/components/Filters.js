@@ -6,6 +6,7 @@ const Filters = ({ selectedCategory, showUnpurchased, onCategoryChange, onUnpurc
 
   return (
     <div className='printHide'>
+      <h2 className='h2' >Filters</h2>
       <FormControl fullWidth variant="outlined">
         <InputLabel>Category</InputLabel>
         <Select
@@ -34,6 +35,7 @@ const Filters = ({ selectedCategory, showUnpurchased, onCategoryChange, onUnpurc
         }
         label="Show Unpurchased Items Only"
       />
+      <h2 className='h2' >Your List</h2>
     </div>
   );
 };
